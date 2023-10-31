@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Curso practico 1</title>
+    <title>Clase 2 email send</title>
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300;500;700&display=swap" rel="stylesheet">
 </head>
@@ -19,11 +19,7 @@
         --md:16px;
         --lg:18px;
     }
-    body {
-            margin: 0;
-            font-family: 'Quicksand', sans-serif;
-        }
-    .login{
+    .email-send{
         width: 100%;
         height: 100vh;
         display: grid;
@@ -33,7 +29,7 @@
         display: grid;
          grid-template-rows: auto 1fr auto;
          width: 300px;
-    }
+         justify-items: center;    }
     .logo{
         width: 150px;
         margin-bottom: 48px;
@@ -53,25 +49,11 @@
         margin-bottom: 40px;
         text-align: center;
     }
-    .form{
-        display: flex;
-        flex-direction: column;
-    }
-    .label{
-        font-size: var(--sm);
-        font-weight: bold;
-        margin-bottom: 4px;
-    }
-    .input{
-        background-color: var(--text-input-field);
-        border: none;
-        border-radius: 8px;
-        height: 30px;
-        font-size: var(--md);
-        padding: 8px;
-        margin-bottom: 12px;
-    }
-    .primary-button{
+    body {
+            margin: 0;
+            font-family: 'Quicksand', sans-serif;
+        }
+    .send{
         background-color: var(--hospital-green);
         border-radius: 8px;
         border: none;
@@ -82,32 +64,51 @@
         font-weight: bold;
         height: 50px;
     }
-    .login-button{
-        margin-top: 15px;
+    .email-img{
+        background-color: var(--text-input-field);
+        height: 120px;
+        width: 120px;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
         margin-bottom: 30px;
     }
-    @media (max-width:640px) {
+    .email-img img{
+        width: 80px;
+    }
+    .sino {
+        font-size: var(--sm);
+    }
+    .sino span{
+        color: var(--very-light-pink);
+    }
+    .sino a{
+        text-decoration: none;
+        color: var(--hospital-green);
+    }
+    @media (max-width:640px){
         .logo{
             display: block;
         }
     }
 </style>
 <body>
-    <div class="login">
+    <div class="email-send">
         <div class="form-container">
             <img src="./assets/Platzi_YardSale_Logos/logo_yard_sale.svg" alt="logo" class="logo">
 
-            <h1 class="title">Create a new password</h1>
-            <p class="subtitle">Enter a new password for your account</p>
+            <h1 class="title">Email has been sent!</h1>
+            <p class="subtitle">please check your inbox for instructions on how to reset the password</p>
 
-            <form action="/" class="form">
-                <label for="password" class="label">Password</label>
-                <input type="password" id="password" class="input input-password" placeholder="**********">
-                <label for="new-password" class="label">Re-enter Password</label>
-                <input type="password" id="password" class="input input-password" placeholder="**********">
-
-                <input type="submit" value="Confirm" class="primary-button login-button">
-            </form>
+           <div class="email-img">
+            <img src="./assets/Platzi_YardSale_Icons/email.svg" alt="icono" class="icono-card">
+           </div>
+            <input type="submit" value="Login" class="send">
+            <p class="sino">
+                <span>Didn't recive the email?</span>
+                <a href="/">Resend</a>
+            </p>
         </div>
     </div>
 </body>
